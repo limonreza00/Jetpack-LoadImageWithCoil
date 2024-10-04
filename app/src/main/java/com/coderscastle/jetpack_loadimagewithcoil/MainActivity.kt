@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import coil.compose.AsyncImage
 import com.coderscastle.jetpack_loadimagewithcoil.ui.theme.JetpackLoadImageWithCoilTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,29 +20,15 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             JetpackLoadImageWithCoilTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+
+                val imageUrl = "https://logos-world.net/wp-content/uploads/2020/11/Deadpool-Logo.png"
+
+                AsyncImage(
+                    model = imageUrl,
+                    contentDescription = null,
+                )
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    JetpackLoadImageWithCoilTheme {
-        Greeting("Android")
-    }
-}
