@@ -65,7 +65,6 @@ fun LoadImage (){
             .size(Size.ORIGINAL)
             .crossfade(1000)
             .build()
-        
 
         val imageState = rememberAsyncImagePainter(model=model).state
 
